@@ -9,21 +9,21 @@ class string1
 {
 public:
 	//costuctors and other methods
-	string1(const char* string);
-	string1(const string1 &);//copy constructor
+	string1(const char* s);
+	string1(const string1 &st);//copy constructor
 	string1();//default constructor
 	~string1();//destructor
 	//overload operator methods
-	string1& operator=(const string1 &);
+	string1& operator=(const string1 &st1);
 	string1& operator=(const char* str);
 	char operator[](int i);
 	const char & operator[](int i)const;
 	//overload operator friend
-	friend bool operator<(const string1 &, const string1 &);
-	friend bool operator>(const string1 &, const string1 &);
-	friend bool operator==(const string1 &, const string1 &);
-	friend ostream& operator<<(ostream& os, const string1 &);
-	friend istream& operator>>(istream & is, string1 &);
+	friend bool operator<(const string1 &st1, const string1 &st2);
+	friend bool operator>(const string1 &st1, const string1 &st2);
+	friend bool operator==(const string1 &st1, const string1 &st2);
+	friend ostream& operator<<(ostream& os, const string1 &st);
+	friend istream& operator>>(istream & is, string1 &st);
 	int length()const
 	{
 		return len;

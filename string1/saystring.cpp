@@ -1,8 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"string1.h"
-
-#include<string>
-#include<fstream>
 #include<iostream>
 const int ArSize = 10;
 const int MaxLen = 81;

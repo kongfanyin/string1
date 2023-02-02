@@ -38,7 +38,6 @@ string1::~string1()
 
 string1 & string1::operator=(const string1 &st)
 {
-	// TODO: 在此处插入 return 语句
 	if (this == &st)
 	{
 		return *this;
@@ -59,16 +58,14 @@ string1 & string1::operator=(const char * s)
 	std::strcpy(str, s);
 	return *this;
 }
-
+//read only char access for const string
 char string1::operator[](int i)
 {
 	return str[i];
-	return 0;
 }
 
 const char & string1::operator[](int i) const
 {
-	// TODO: 在此处插入 return 语句
 	return str[i];
 }
 
