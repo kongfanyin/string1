@@ -92,14 +92,14 @@ bool operator==(const string1 &str1, const string1 &str2)
 	return (std::strcmp(str1.str, str2.str) == 0);
 }
 
-ostream & operator>>(ostream & os, const string1 &str1)
+ostream & operator<<(ostream & os, const string1 &str1)
 {
 	// TODO: 在此处插入 return 语句
 	os << str1.str;
 	return os;
 }
 
-istream & operator<<(istream & is, string1 &str1)
+istream & operator>>(istream & is, string1 &str1)
 {
 	char temp[string1::CINLIM];
 	is.get(temp, string1::CINLIM);

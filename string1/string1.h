@@ -22,8 +22,8 @@ public:
 	friend bool operator<(const string1 &, const string1 &);
 	friend bool operator>(const string1 &, const string1 &);
 	friend bool operator==(const string1 &, const string1 &);
-	friend ostream& operator>>(ostream& os, const string1 &);
-	friend istream& operator<<(istream & is, string1 &);
+	friend ostream& operator<<(ostream& os, const string1 &);
+	friend istream& operator>>(istream & is, string1 &);
 	int length()const
 	{
 		return len;
