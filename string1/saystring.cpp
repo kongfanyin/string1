@@ -12,19 +12,19 @@ int main(char argc, char** argv)
 	cout << "Hi£¬what's your name.>>\n";
 	cin >> name;
 
-	cout << name << ",please enter to up to " << ArSize << "short saying <enpty line to quit>: \n";
+	cout << name << ",please enter to up to " << ArSize << " short saying <enpty line to quit>: \n";
 	string1 saying[ArSize];//array of object
 	char temp[MaxLen];//tempprary string storage
 	int i;
 	for (i = 0; i < ArSize; i++)
 	{
-		cout << i + 1 << ": ";
+		cout << i + 1 << ":  ";
 		cin.get(temp, MaxLen);
 		while (cin&&cin.get()!='\n')
 		{
 			continue;
 		}
-		if (!cin||temp[0]=='\n')//empty line
+		if (!cin||temp[0]=='\0')//empty line
 		{
 			break;
 		}

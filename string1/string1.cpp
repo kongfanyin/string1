@@ -32,8 +32,8 @@ string1::string1()
 string1::~string1()
 {
 	--num_strings;
+	cout << str << "deleted" << endl;
 	delete[] str;
-	cout << str << "deleted"<<endl;
 }
 
 string1 & string1::operator=(const string1 &st)
@@ -49,20 +49,20 @@ string1 & string1::operator=(const string1 &st)
 	return *this;
 }
 
-string1 & string1::operator=(const char * s)
+string1& string1::operator=(const char * s)//从C字符串创建字符串
 {
-	// TODO: 在此处插入 return 语句
 	delete[] str;
-	len = std::strlen(str);
+	len = std::strlen(s);
 	str = new char[len + 1];
 	std::strcpy(str, s);
 	return *this;
 }
-//read only char access for const string
-char string1::operator[](int i)
+
+char& string1::operator[](int i)
 {
 	return str[i];
 }
+//read only char access for const string
 
 const char & string1::operator[](int i) const
 {
@@ -101,13 +101,12 @@ istream & operator>>(istream & is, string1 &str1)
 	char temp[string1::CINLIM];
 	is.get(temp, string1::CINLIM);
 	if (is)
-		str1 = temp;
-	else
 	{
-		while (is&&is.get()!='\n')
-		{
-			continue;
-		}
+		str1 = temp;
+	}
+	while (is&&is.get()!='\n')
+	{
+		continue;
 	}
 	return is;
 }
